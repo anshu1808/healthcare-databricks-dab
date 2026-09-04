@@ -3,7 +3,7 @@ resources:
 
     healthcare_pipeline_combined_job:
 
-      name: healthcare-pipeline_combined-job
+      name: healthcare-pipeline_combined-job-${bundle.target}
 
       tasks:
 

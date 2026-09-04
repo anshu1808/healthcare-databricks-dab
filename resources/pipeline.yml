@@ -1,13 +1,15 @@
 resources:
   pipelines:
     healthcare_pipeline_combined:
-      name: healthcare-pipeline_combined
+
+      name: healthcare-pipeline_combined-${bundle.target}
 
       catalog: ${var.catalog}
       schema: ${var.schema}
 
+      development: ${var.pipeline_development}
+
       continuous: false
-      development: true
       serverless: true
 
       libraries:
