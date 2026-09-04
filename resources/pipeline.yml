@@ -1,0 +1,30 @@
+resources:
+  pipelines:
+    healthcare_pipeline_combined:
+      name: healthcare-pipeline_combined
+
+      catalog: ${var.catalog}
+      schema: ${var.schema}
+
+      continuous: false
+      development: true
+      serverless: true
+
+      libraries:
+        - file:
+            path: ../src/bronze.py
+
+        - file:
+            path: ../src/silver.py
+
+        - file:
+            path: ../src/gold.py
+
+        - file:
+            path: ../src/audit.py
+
+        - file:
+            path: ../src/transformations/03_silver_claims_cdc.py
+
+        - file:
+            path: ../src/transformations/04_advanced_claims_pipeline.py

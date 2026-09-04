@@ -1,0 +1,13 @@
+resources:
+  jobs:
+
+    healthcare_pipeline_combined_job:
+
+      name: healthcare-pipeline_combined-job
+
+      tasks:
+
+        - task_key: run_dlt
+
+          pipeline_task:
+            pipeline_id: ${resources.pipelines.healthcare_pipeline_combined.id}
